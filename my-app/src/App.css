@@ -1,41 +1,4 @@
-/* .App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
 
 .carousel {
   background-color: #333;
@@ -89,26 +52,40 @@
   height: auto;
   max-width: 300px;
 }
+.right-options {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between items */
+}
 
 .right-options a {
-  margin-left: 31px;
   color: #333;
   text-decoration: none;
 }
 
+.separator {
+  color: #ccc; /* Light gray color */
+  font-size: 18px;
+}
+
+
 .bottom-nav {
-  display: inline-flex;
+  display: flex;
+  justify-content: space-between; /* Ensures left and right sections spread out */
   align-items: center;
+  padding: 10px 20px;
+  width: 100%;
 }
 .navigation {
   display: flex;
-  justify-content: start;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 .navSearch {
   display: flex;
   align-items: center;
-  justify-content: end !important;
+  justify-content: flex-end !important; /* Moves search bar & icons to the right */
+  flex-grow: 1;
 }
 .nav-links {
   display: flex;
@@ -160,7 +137,7 @@
 }
 
 .icons {
-  font-size: 25px;
+  font-size:30px;
 }
 
 /* image header */
@@ -179,39 +156,31 @@
 }
 
 /* category section */
-
 .category-section {
   text-align: center;
   margin: 50px 0;
+  max-width: 100%; /* Ensure it doesn’t exceed screen width */
+  overflow: hidden; /* Prevent horizontal overflow */
 }
 
-.section-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 30px;
-}
 .category-container {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive layout */
   gap: 10px;
   justify-items: center;
   padding: 0 20px;
+  max-width: 100%; /* Prevent overflow */
 }
+
 .category-card {
   position: relative;
-  width: 278px;
+  width: 100%;
+  max-width: 278px; /* Prevent images from expanding beyond this size */
   height: auto;
-  max-height: 400px;
   overflow: hidden;
   cursor: pointer;
   border-radius: 10px;
   transition: transform 0.4s ease-in-out;
-}
-
-.image-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
 }
 
 .category-image {
@@ -219,12 +188,13 @@
   height: auto;
   object-fit: cover;
   border-radius: 10px;
-  transition: 1s ease;
+  transition: transform 0.3s ease-in-out;
 }
 
 .category-card:hover .category-image {
   transform: scale(1.05);
 }
+
 .category-name {
   position: absolute;
   bottom: 10px;
@@ -240,57 +210,65 @@
   text-align: center;
 }
 
+
 /* kids section */
 /* Carousel section layout */
-.carousel-section {
+.kids-carousel-section {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  padding: 50px;
-}
-
-
-
-.carousel-image {
   width: 100%;
-  max-width: 100%;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  border-radius: 20px;
+  margin-bottom: 150px;
+  margin-top: 150px;
+  margin-left: -80px;
 }
 
-
-.carousel-right .part_two {
-  width: 30%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
+.kids-carousel-left img {
+  width: 700px;
+  height: 700px;
+  border-radius: 40px;
 }
 
-.progress-bar-container {
+.kids-carousel-right {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-left: -40px;
+  gap: 20px;
+}
+
+.kids-progress-bars-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  margin-top: 40px;
+}
+
+.kids-progress-bar-container {
   width: 100%;
   height: 5px;
-  background-color: #f0f0f0; 
+  background-color: #e0e0e0;
   border-radius: 5px;
   overflow: hidden;
 }
 
-.progress-bar {
+.kids-progress-bar {
   height: 100%;
-  background-color: #000; 
-  transition: width 0.1s ease;
+  background-color: black;
+  transition: width 0.3s linear;
 }
 
-.active {
-  background-color: #000; 
+.kids-progress-bar.active {
+  background-color: black;
 }
 
-.order-button {
+.kids-order-button {
   margin-top: 30px;
+  margin-left: 15px;
   padding: 13px 60px;
-  font-size: 28px;
+  font-size: 21px;
   background-color: black;
   color: white;
   border: none;
@@ -298,9 +276,177 @@
   cursor: pointer;
 }
 
-.order-button:hover {
-  background-color: #333; 
+.kids-order-button:hover {
+  background-color: #333;
+}
+/* product carousel */
+
+.carousel-container {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 90%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  text-align: center;
+}
+.product-item {
+  text-align: center;
+  padding: 5px; /* Added padding around each product */
+}
+
+.product-item img {
+  width: 100%; /* Ensures images are responsive */
+  max-width: 100%; /* Controls the max image size */
+  border-radius: none;
+  display: block;
+  margin: auto;
+}
+
+/* Arrows Styling */
+.prev-arrow,
+.next-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: black;
+  color: white;
+  border: none;
+  font-size: 16px; /* Reduced arrow size */
+  padding: 8px; /* Reduced padding */
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prev-arrow {
+  left: -25px;
+}
+
+.next-arrow {
+  right: -25px;
+}
+
+/* Sale Price Style */
+.sale-price {
+  color: red;
+}
+
+/* Slider Item Spacing */
+.slick-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px; /* Adds space between images */
+}
+
+
+/* footer styling */
+.footer-container {
+  background-color: #1a1a1a;
+  color: white;
+  
+}
+
+/* Newsletter Section */
+.newsletter {
+  background-color: #f8f8f8; /* Light background */
+  padding:30px 20px;
+  display: flex;
+  justify-content: center;
+  color:black
+}
+
+.newsletter-content {
+  display: flex;
+  align-items: center;
+  gap: 260px;
+}
+
+.newsletter-content h3 {
+  font-size: 20px;
+  font-weight: light bold;
+}
+
+.subscribe-box {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.subscribe-box input {
+  width: 250px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.subscribe-box button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Centered Footer Content */
+.footer-content {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 50px 20px;
+}
+
+.footer-column {
+  width: 30%;
+}
+
+.footer-column h4 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column li {
+  margin-bottom: 5px;
+  cursor: pointer;
 }
 
 
 
+.footer-contact p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-icons svg {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #333;
+}

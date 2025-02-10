@@ -13,12 +13,13 @@ const Header = () => {
           </div>
 
           <div className="right-options">
-            <a href="/store-locator"style={{ fontSize: '22px' }}>
+            <a href="/store-locator"style={{ fontSize: '18px' }}>
               <IoLocationOutline />
               Store Locator
             </a>
-
-            <a href="/signin"style={{ fontSize: '22px' }}>Sign In</a>
+            <a>
+            <span className="separator">|</span></a>
+            <a href="/signin"style={{ fontSize: '18px' }}>Sign In</a>
           </div>
         </div>
         <div className="bottom-nav">

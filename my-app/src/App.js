@@ -5,7 +5,7 @@ import Header from './Commponents/Header';
 import ProductCarousel from './Commponents/ProductCarousel';
 import CategorySection from './Commponents/CategorySection';
 import KidsSection from './Commponents/KidsSection';
-
+import FooterSection from './Commponents/FooterSection'
 
 
 function App() {
@@ -15,7 +15,8 @@ function App() {
         <Header />
         <ProductCarousel/>
         <CategorySection/>
-       <KidsSection/>
+        <KidsSection/>
+        <FooterSection/>
     </div>
   );
 }

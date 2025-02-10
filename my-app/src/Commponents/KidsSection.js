@@ -25,31 +25,36 @@ const KidsSection = () => {
         }
         return prevProgress + 1; // Increment progress
       });
-    }, 100); // Adjust the time to control speed
+    }, 20); // Adjust the time to control speed (50ms for smoother progress)
 
     return () => clearInterval(interval);
   }, [currentIndex]);
 
+  // Preload images to avoid flickering
+  useEffect(() => {
+    images.forEach((image) => {
+      const img = new Image();
+      img.src = image.url;
+    });
+  }, []);
+
   return (
-    <div className="carousel-section">
-      <div className="carousel-left">
+    <div className="kids-carousel-section">
+      <div className="kids-carousel-left">
         <img
           src={images[currentIndex].url}
-          alt="Carousel Slide"
-          className="carousel-image"
+          alt={`Slide ${currentIndex + 1}`}
+          className="kids-carousel-image"
         />
       </div>
-
-      <div className="carousel-right">
-        <div>
-          <h3>STEP INTO MAGIC</h3>
-          <button className="order-button">Order Now</button>
-        </div>
-        <div className="part_two">
+      <div className="kids-carousel-right">
+        <h3>STEP INTO MAGIC</h3>
+        <button className="kids-order-button">Order Now</button>
+        <div className="kids-progress-bars-container">
           {images.map((_, index) => (
-            <div key={index} className="progress-bar-container">
+            <div key={index} className="kids-progress-bar-container">
               <div
-                className={`progress-bar ${
+                className={`kids-progress-bar ${
                   index === currentIndex ? "active" : ""
                 }`}
                 style={{

@@ -1,13 +1,14 @@
 import React from 'react';
 
 const categories = [
-  { name: 'SALE', imageUrl: '       /images/sale_tile_1.webp' },
+  { name: 'SALE', imageUrl: '/images/sale_tile_1.webp' },
   { name: 'WOMEN', imageUrl: '/images/sale_tile_3.webp' },
-  { name: 'MEN', imageUrl: '/images/tiles_MEN_2.webp ' },
-  { name: 'BAGS', imageUrl: ' /images/tiles_BAGS_1.webp ' },
-  { name: 'KIDS', imageUrl: '/images/kids_tiles_copy_1.webp ' },
+  { name: 'MEN', imageUrl: '/images/tiles_MEN_2.webp' },
+  { name: 'BAGS', imageUrl: '/images/tiles_BAGS_1.webp' },
+  { name: 'KIDS', imageUrl: '/images/kids_tiles_copy_1.webp' },
   { name: 'FRAGRANCES', imageUrl: '/images/sale_tile_2.webp' },
 ];
+
 
 const CategorySection = () => {
   return (
