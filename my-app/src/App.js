@@ -6,6 +6,7 @@ import ProductCarousel from './Commponents/ProductCarousel';
 import CategorySection from './Commponents/CategorySection';
 import KidsSection from './Commponents/KidsSection';
 import FooterSection from './Commponents/FooterSection'
+import ExploreSection from './Commponents/ExploreSection';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <ProductCarousel/>
         <CategorySection/>
         <KidsSection/>
+        <ExploreSection/>
         <FooterSection/>
     </div>
   );
